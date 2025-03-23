@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Globe Paléogéographique – Holocène (0 Ma)</title>
+  <style>
+    html, body { margin: 0; height: 100%; overflow: hidden; }
+    #globeViz { width: 100%; height: 100%; }
+  </style>
+</head>
+<body>
+  <div id="globeViz"></div>
+
+  <!-- Globe.gl -->
+  <script src="https://unpkg.com/globe.gl"></script>
+
+  <script>
+    const world = Globe()
+      .globeImageUrl('paleomap_0Ma_texture.png') 
+      .bumpImageUrl(null) 
+      .backgroundColor('#000')
+      .showAtmosphere(false)
+      (document.getElementById('globeViz'));
+
+    // auto-rotate the globe
+    world.controls().autoRotate = true;
+    world.controls().autoRotateSpeed = 0.3;
+  </script>
+</body>
+</html>
